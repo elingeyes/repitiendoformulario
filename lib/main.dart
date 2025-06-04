@@ -28,6 +28,46 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class RegistrationFormScreen {
+class RegistrationFormScreen extends StatelessWidget {
+  static const Color primaryNavy = Color(0xFF1E3A8A);
+  static const Color backgroundGray = Color(0xFFF9FAFB);
+  static const Color secondaryGray = Color(0xFF6B7280);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(24),
+      decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(12),
+      boxShadow:[
+        BoxShadow(
+          color: secondaryGray.withOpacity(0.1),
+          blurRadius: 10,
+          offset: Offset(0, 4),
+        ),
+      ],
+    ),
+    child:Column(
+    children: [
+      Icon(Icons.person_add, size: 48, color: primaryNavy),
+      SizedBox(height: 12),
+      Text(
+        "Datos Personales",
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: primaryNavy
+        ),
+      ),
+          SizedBox(height: 8),
+          Text(
+            "Complete todos los campos requeridos",
+            style: TextStyle(fontSize: 14, color: secondaryGray),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
